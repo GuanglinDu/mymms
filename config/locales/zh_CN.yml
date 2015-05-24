@@ -1,0 +1,19 @@
+zh_CN:
+  welcome:
+    index:
+      hello: "你好，MyMMS(我的物料管理系统）！"
+
+  layouts:
+    application:
+      home: "主页"
+      procurement: "采购"
+      sales: "销售"
+      inventories: "库存"
+      accounting: "财务"
+      clients: "客户"
+      statistics: "统计"
+      settings: "设置"
+      languages:
+        lang: "语言"
+        en: "英语"
+        zh_CN: "简体中文"

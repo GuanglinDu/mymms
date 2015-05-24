@@ -1,0 +1,50 @@
+<!-- app/views/shared/_navigation.html.erb -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-header col-xs-8">
+        <%= link_to 'MyMMS', welcome_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.procurement'), procurement_index_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.sales'), sales_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.inventories'), inventories_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.accounting'), accounting_index_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.clients'), clients_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.statistics'), statistics_index_path, class: 'navbar-brand' %>
+        <%= link_to t('layouts.application.settings'), settings_index_path, class: 'navbar-brand' %>
+        <%# = link_to "Import", import_index_path, class: 'navbar-brand' %>
+        <%# = link_to "Export", export_index_path, class: 'navbar-brand' %>
+        <%# = link_to "Search", search_index_path, class: 'navbar-brand' %>
+        <%# = link_to "Help", help_index_path, class: 'navbar-brand' %>
+      </div>
+
+      <!-- Locale selector: http://www.sitepoint.com/go-global-rails-i18n/ -->
+      <div class="navbar-header col-xs-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= t('layouts.application.languages.lang') %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to t('layouts.application.languages.en'), change_locale_path(:en) %></li>
+              <li><%= link_to t('layouts.application.languages.zh_CN'), change_locale_path(:zh_CN) %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- System user sign in/out links -->
+      <!--https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-edit-their-password -->
+      <div class="col-xs-2">
+        <%# if user_signed_in? %>
+          Signed in as <%# = current_user.email %><br /> 
+          <%# = link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'navbar-link' %> | 
+          <%# = link_to "Reset password", edit_user_registration_path %>
+        <%# else %>
+          <%# = link_to "Sign up", new_user_registration_path, class: 'navbar-link' %> |
+          <%# = link_to "Sign in", new_user_session_path, class: 'navbar-link' %>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+</nav>
