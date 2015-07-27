@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     def set_locale
       if cookies[:mymms_locale] && I18n.available_locales.include?(cookies[:mymms_locale].to_sym)
-        l = cookies[:mymms_locale].to_sym
+        lang = cookies[:mymms_locale].to_sym
       else
         begin
           country_code = request.location.country_code
@@ -18,16 +18,16 @@ class ApplicationController < ActionController::Base
             country_code = country_code.downcase.to_sym
             # Use simplified Chinese for China mainland, English for others
             #[:zh_CN, :ru, :kz, :ua, :by, :tj, :uz, :md, :az, :am, :kg, :tm].include?(country_code) ? l = :Zh_CN : l = :en
-            [:zh_CN].include?(country_code) ? l = :Zh_CN : l = :en
+            [:zh_CN].include?(country_code) ? lang = :Zh_CN : lang = :en
           else
-            l = I18n.default_locale # use default locale if cannot retrieve this info
+            lang = I18n.default_locale # use default locale if cannot retrieve this info
           end
         rescue
-          l = I18n.default_locale
+          lang = I18n.default_locale
         ensure
-          cookies.permanent[:mymms_locale] = l
+          cookies.permanent[:mymms_locale] = lang
         end
       end
-      I18n.locale = l
+      I18n.locale = lang
     end
 end

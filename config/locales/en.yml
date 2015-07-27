@@ -28,10 +28,11 @@ en:
     application:
       home: "Home"
       procurement: "Procurement"
-      sales: "sales"
+      sales: "Sales"
       inventories: "Inventories"
       accounting: "Accounting"
-      clients: "Clinets"
+      suppliers: "Suppliers"
+      clients: "Clients"
       statistics: "Statistics"
       settings: "Settings"
       languages:

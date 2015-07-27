@@ -6,6 +6,7 @@ zh_CN:
   layouts:
     application:
       home: "主页"
+      suppliers: "供应商"
       procurement: "采购"
       sales: "销售"
       inventories: "库存"

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'suppliers/index'
+
   get 'settings/index'
 
   get 'statistics/index'
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   #devise_for :users
-  resources :procurement, :sales, :inventories, :accounting, :clients
+  resources :suppliers, :procurement, :sales, :inventories, :accounting, :clients
   get 'welcome/index'
   #resources :articles, only: [:index, :new, :create, :edit, :update]
 
